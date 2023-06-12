@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Chathurika Bandaranayake</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="hero-header">
+            <div class="wrapper">
+                <header>
+                    <div class="logo">
+                        <div class="logo-text"><b><i>CHATHU</i></b></div>
+                    </div>
+                    <nav>
+                        <ul class="navlinks">
+                            <li><a href="#container">Home</a></li>
+                            <li><a href="#about">About Me</a></li>
+                            <li><a href="#service">Our Services</a></li>
+                            <li><a href="#contact">Contact Us</a></li>
+                        </ul>
+                    </nav>
+                </header>
+                <hr color="#fff">
+            </div>
+                <div class="container" id="container">
+                    <div class="profile-pic">
+                        <img src="img/profile_pic.jpeg" alt="profile pic">
+                    </div>
+                    <div class="profile-text">
+                        <h4>Hello, my name is</h4>
+                        <h1>Chathurika Bandaranayake</h1>
+                        <h3>I'm  a Front-end developer.</h3>
+                            
+                    </div>
+                    
+                </div>
+                <button onclick="myFunction()">Hide this.</button>
+
+                <div id="myDIV">
+                Hi , joing with us to create a beautiful web pages.
+                </div>
+
+                <script>
+                function myFunction() {
+                var x = document.getElementById("myDIV");
+                if (x.style.display === "none") {
+                    x.style.display = "block";
+                } else {
+                    x.style.display = "none";
+                }
+                }
+                </script>
+
+        </div>
+        <hr>
+
+        <!---About Me Section --->
+        <div class="adout" id="about">
+            <div class="main">
+                <div class="slideshow-container">
+
+                    <div class="mySlides fade">
+                      <div class="numbertext">1 / 2</div>
+                      <img src="img/about_me.jpeg" style="width:50%">
+                      
+                    </div>
+                    
+                    <div class="mySlides fade">
+                      <div class="numbertext">2 / 2</div>
+                      <img src="img/profile_pic.jpeg" style="width:50%">
+                      
+                    </div>
+                    
+                    
+                    <a class="prev" onclick="plusSlides(-1)">❮</a>
+                    <a class="next" onclick="plusSlides(1)">❯</a>
+                    
+                    </div>
+                    <br>
+                    
+                    <div style="text-align:center">
+                      <span class="dot" onclick="currentSlide(1)"></span> 
+                      <span class="dot" onclick="currentSlide(2)"></span> 
+                      
+                    </div>
+                    
+                    <script>
+                    let slideIndex = 1;
+                    showSlides(slideIndex);
+                    
+                    function plusSlides(n) {
+                      showSlides(slideIndex += n);
+                    }
+                    
+                    function currentSlide(n) {
+                      showSlides(slideIndex = n);
+                    }
+                    
+                    function showSlides(n) {
+                      let i;
+                      let slides = document.getElementsByClassName("mySlides");
+                      let dots = document.getElementsByClassName("dot");
+                      if (n > slides.length) {slideIndex = 1}    
+                      if (n < 1) {slideIndex = slides.length}
+                      for (i = 0; i < slides.length; i++) {
+                        slides[i].style.display = "none";  
+                      }
+                      for (i = 0; i < dots.length; i++) {
+                        dots[i].className = dots[i].className.replace(" active", "");
+                      }
+                      slides[slideIndex-1].style.display = "block";  
+                      dots[slideIndex-1].className += " active";
+                    }
+                    </script>
+                    
+                <div class="about-text">
+                    <h2>About Me</h2>
+                    <h4>Front-end developer</h4>
+                    <p>I am Chathurika Bandaranayake. I am a front-end developer 
+                        I can provide clean code and pixel perfect design. I also make the website more and more 
+                        intractive with web animation.A responsive design makes your website accessible to all 
+                        user, regardless of their device.
+                    </p>
+                    <p><span>Age: </span>24</p>
+                    <p><span>Gender: </span>Female</p>
+                    <p><span>Language: </span>English</p>
+                    <p><span>Country: </span>Sri lanka</p>
+                    <button type="button">See More</button>
+                </div>
+            </div>
+        </div>
+        <hr>
+
+        <!--Service section -->
+        <div class="service" id="service">
+            <div class="tittle">
+                <h2>Our Service</h2>
+            </div>
+            <div class="box">
+                <div class="card">
+                    <h5>Web design andDevelopment</h5>
+                    <div class="pra">
+                        <p>Creating visually stunning and responsive website
+                            tailered to your needs. Our web design and deverlopment 
+                            services enhance your online presence.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h5>Mobile app Development</h5>
+                    <div class="pra">
+                        <p>We specialize in brand development and managment service,
+                            creating a unique identity your business. Let us
+                            hrlp you tell your story and connect with your audience.
+                        </p>
+                    </div>
+                </div>
+
+                
+            </div>
+        </div>
+        <hr>
+
+        <!--Contact Us section-->
+        <section class="contact" id="contact">
+            <div class="heading">
+                <h2>Contact Us</h2>
+            </div>
+            <div class="contact-form">
+                <form action="#" name="myForm" onsubmit="return validateForm()" method="post">
+                    <input type="text" placeholder="Your Name" name="nameInput">
+                    <input type="Email" placeholder="Your Email" name="emailInput">
+                    <textarea name="messageInput" cols="30" rows="10" placeholder="Write Message Here..."></textarea>
+                    <button type="submit">Submit</button>
+                </form>
+                
+                <script>
+                    function validateForm()
+                    {
+                    let name = document.forms["myForm"]["nameInput"].value;
+                    let email = document.forms["myForm"]["emailInput"].value;
+                    let messeage = document.forms["myForm"]["messageInput"].value;
+                    
+                    if (name === '' || email === '' || message === '') {
+                        alert("Please fill in all fields.");
+                        return false;
+                    }
+                   
+                    };
+                </script>
+            </div>
+        </section>
+        <hr>
+
+        <!--Footer-->
+        <footer>
+            <p>Chathurika Bandaranayake</p>
+            <p>+94762003571</p>
+            <p>chathurikabandaranayake@gmail.com</p>
+            <div class="social">
+                <a href="#"><img src="img/facebook.png"></a>
+                <a href="#"><img src="img/instagram.png"></a>
+                <a href="#"><img src="img/linkedin.png"></a>
+                <a href="#"><img src="img/whatsapp.png"></a>
+            </div>
+        </footer>
+    </body>
+</html>
